@@ -1,0 +1,262 @@
+/* =============================================
+   GLOBAL REACT STYLES
+   ============================================= */
+
+:root {
+  --primary:    #C3073F;
+  --primary-dk: #950740;
+  --dark:       #1a1a1d;
+  --light-bg:   #f9f4f5;
+}
+
+body {
+  margin: 0;
+  font-family: 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* =============================================
+   DEMO HEADER
+   ============================================= */
+
+.header-div {
+  padding: 24px 20px;
+  background: linear-gradient(135deg, var(--dark) 0%, #2a0a14 100%);
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  border-bottom: 3px solid var(--primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.header-div::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(195,7,63,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(195,7,63,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.demo-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 6px;
+  padding-bottom: 0;
+  border: none;
+}
+
+.demo-subtitle {
+  color: rgba(255,255,255,0.55);
+  font-size: .9rem;
+  margin: 0;
+}
+
+/* =============================================
+   LOAD BUTTON
+   ============================================= */
+
+.load-div {
+  margin-top: 5%;
+  padding: 2rem;
+}
+
+.css-btn {
+  background: linear-gradient(135deg, var(--primary-dk), var(--primary));
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 50px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Muli', sans-serif;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(149,7,64,0.35);
+  letter-spacing: .04em;
+  position: relative;
+  overflow: hidden;
+}
+
+.css-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0);
+  transition: background .3s ease;
+}
+
+.css-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(149,7,64,0.45);
+}
+
+.css-btn:hover::before {
+  background: rgba(255,255,255,0.08);
+}
+
+.css-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(195,7,63,0.3);
+}
+
+@media all and (max-width: 30em) {
+  .css-btn {
+    display: block;
+    margin: 0.2em auto;
+  }
+}
+
+/* =============================================
+   CARD / DROPZONE
+   ============================================= */
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  margin: 20px auto;
+  padding: 30px;
+  position: relative;
+  background-color: #fff;
+  margin-bottom: 50px;
+  border-radius: 16px;
+  transition: all .3s ease;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.card:hover {
+  box-shadow: 0 16px 40px rgba(195,7,63,0.12);
+  transform: translateY(-4px);
+  margin-bottom: 54px;
+}
+
+.dropzone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px dashed rgba(195,7,63,0.35);
+  background: var(--light-bg);
+  width: 100%;
+  height: 100%;
+  padding: 24px 16px;
+  border-radius: 12px;
+  transition: all .3s ease;
+}
+
+.dropzone:hover {
+  border-color: var(--primary);
+  background: rgba(195,7,63,0.04);
+}
+
+.dropzone-image {
+  margin: 5px;
+  width: 100px;
+  height: 100px;
+  border: 2px solid rgba(195,7,63,0.15);
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* =============================================
+   LAYOUT HELPERS
+   ============================================= */
+
+.center-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-div-wrap {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.center-div-wrap p {
+  color: #888;
+  font-size: .9rem;
+  margin-top: 8px;
+}
+
+/* =============================================
+   IMAGE PREDICTION CANVAS
+   ============================================= */
+
+.image-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.image-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* =============================================
+   RESULT BOX
+   ============================================= */
+
+.result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(149,7,64,0.2);
+  margin: 20px auto;
+  padding: 14px 20px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  position: relative;
+  background: linear-gradient(135deg, var(--primary-dk), var(--primary));
+  margin-bottom: 50px;
+  border-radius: 50px;
+  transition: all .3s ease;
+  letter-spacing: .04em;
+  width: fit-content;
+  min-width: 200px;
+}
+
+.result:hover {
+  box-shadow: 0 14px 36px rgba(149,7,64,0.35);
+  transform: translateY(-2px);
+  margin-bottom: 54px;
+}
+
+/* =============================================
+   MISC
+   ============================================= */
+
+.black-text {
+  color: #333;
+  font-weight: 400;
+}
