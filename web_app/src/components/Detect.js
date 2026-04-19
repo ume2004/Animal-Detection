@@ -75,8 +75,8 @@ const Detect = () => {
                     <div style={{ textAlign: 'center' }}>
                       <LoadingSpinner />
                       <p style={{
-                        color: '#950740',
-                        fontWeight: '500',
+                        color: '#2d7a3e',
+                        fontWeight: '600',
                       }}>Loading Model. Please wait a few seconds...</p>
                     </div>
                   ) : (
